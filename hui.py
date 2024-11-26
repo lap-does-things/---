@@ -91,7 +91,8 @@ def runit(file : str):
         "отцовский":"super",
         "констсписок":"tuple",
         "связать":"zip",
-        "чтоэтоблятьтакое":"print(ver)"
+        "чтоэтоблятьтакое":"print(ver)",
+        "поясняю":"#"
     }
 
     with open(file, 'rb') as src:
