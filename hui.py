@@ -2,6 +2,7 @@ from tokenize import tokenize, untokenize
 import sys 
 ver="ХУЙ - Хороший, Удобный, Интерпретируемый. v.1.0"
 
+
 '''
 
 ХУЙ - Хороший, Удобный, Интерпретируемый. v.1.0
@@ -16,11 +17,12 @@ python hui.py [имя файла\путь к файлу в подпапках]
 
 '''
 
+
 '''
     Ниже находятся ключевые слова и их сородичи из Питона :
 '''
 
-def runit(file : str):
+def runit(file : str): 
     keys={
         "ошибка":"Exception",
         "пожалуйста":"if True:", 
@@ -94,7 +96,6 @@ def runit(file : str):
         "чтоэтоблятьтакое":"print(ver)",
         "поясняю":"#"
     }
-
     with open(file, 'rb') as src:
         tokens=[]
         for token in tokenize(src.readline):
@@ -103,10 +104,8 @@ def runit(file : str):
             else: t= (token.type, token.string)
             
             tokens.append(t)
-
     code = untokenize(tokens).decode("utf-8")
     exec(code)
-
 
 if __name__ == '__main__':
     runit(file=sys.argv[1])
